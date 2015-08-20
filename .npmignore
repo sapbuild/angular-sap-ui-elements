@@ -1,0 +1,8 @@
+gulp-config/
+bump-config.json
+!assets/angular-sap-ui-elements-*.svg
+!styles/sprite.less
+gulpfile.js
+.eslintrc
+make
+docs/

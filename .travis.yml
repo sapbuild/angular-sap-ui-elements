@@ -1,0 +1,14 @@
+language: node_js
+
+before_install: npm install -g grunt-cli
+
+install:
+  - npm install
+  
+node_js:
+  - 0.10
+  
+script:
+  - grunt dist 
+  
+after_script: "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"

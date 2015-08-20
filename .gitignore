@@ -1,0 +1,8 @@
+node_modules/
+angular-sap-ui-elements.iml
+styles/sprite.less
+assets/angular-sap-ui-elements-*.svg
+.idea/
+dist/
+css/
+.publish/

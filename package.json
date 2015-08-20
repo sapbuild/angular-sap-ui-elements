@@ -1,0 +1,49 @@
+{
+  "name": "angular-sap-ui-elements",
+  "description": "SAP Common client UI elements",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sapbuild/angular-sap-ui-elements.git"
+  },
+  "licenses": [
+    {
+      "type": "Apache License, Version 2.0",
+      "url": "https://github.com/sapbuild/angular-sap-ui-elements/blob/master/LICENSE.md"
+    }
+  ],
+  "dependencies": {
+    "heatmap.js": "https://github.com/pa7/heatmap.js/archive/v2.0.tar.gz",
+    "sortablejs": "1.0.0",
+    "angular-awesome-slider": "2.3.5",
+    "ng-file-upload": "3.0.2",
+    "pica": "1.0.7",
+    "textangular": "1.3.11",
+    "angular-sap-d3-plugins": "0.1.0",
+    "angular-sap-html2canvas": "0.1.0",
+    "d3-browserify": "3.4.12",
+    "lodash": "3.8.0",
+    "moment": "2.8.4"
+  },
+  "devDependencies": {
+    "browserify": "^9.0.3",
+	"coveralls": "^2.11.3",
+    "del": "~1.1.1",
+    "gulp": "~3.8.11",
+    "gulp-angular-templatecache": "^1.7.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-eslint": "~0.9.0",
+    "gulp-gh-pages": "^0.5.2",
+    "gulp-header": "~1.2.2",
+    "gulp-html2js": "^0.2.0",
+    "gulp-less": "^3.0.3",
+    "gulp-replace": "0.5.3",
+    "gulp-svg-sprite": "1.0.8",
+    "gulp-svgmin": "1.1.2",
+    "gulp-util": "~3.0.4",
+    "vinyl-source-stream": "^1.1.0"
+  },
+  "browser": {
+    "heatmap.js": "heatmap.js/build/heatmap.js"
+  }
+}
