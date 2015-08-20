@@ -1,0 +1,288 @@
+<ui-toolbar layout="column" class="left-nav-title">
+    <h1 class="ui-toolbar-tools" flex layout="column">Services > httpError</h1>
+</ui-toolbar>
+<ui-content flex ui-scroll-y>
+<ui-content flex class="doc-content">
+<div layout="row"><a name="Service-httpError"><h2 class="item-name">httpError</h2></a></div>
+
+<div layout="row">
+    <div class="item" flex="20" flex-sm="20">
+        Include httpError as a dependency in your app module
+    </div>
+    <div class="code" flex="80" flex-sm="80">
+                <pre><code>
+                    var module = angular.module('myModule', ['uiError, httpError']);
+                </code></pre>
+    </div>
+</div>
+
+<div layout="row" class="row-top">
+    <div class="item" flex="20" flex-sm="20">
+        Place http-toast element into your HTML.
+    </div>
+    <div class="code" flex="80" flex-sm="80">
+                <pre><code>
+                    ...
+                    &lt;http-toast&gt;&lt;/http-toast&gt;
+                    ...
+                </code></pre>
+    </div>
+</div>
+
+<div layout="row" class="row-top">
+    <div class="item" flex="20" flex-sm="20">
+        Inject httpError provider in your controller
+    </div>
+    <div class="code" flex="80" flex-sm="80">
+                <pre><code>
+                    module.controller($scope, uiError, httpError) {...};
+                </code></pre>
+    </div>
+</div>
+
+<div layout="row"><a name="Services-httpError-Close"><h2 class="item-name">Open an http error.</h2></a></div>
+<div layout="row">
+    <div class="item" flex>
+        Just click the toast to close it.
+    </div>
+</div>
+<div layout="row" class="row-top">
+    <div class="item" flex="20" flex-sm="20">
+        <ui-button size="small"
+                   ng-click="openHttpError( 'This is content text' )">
+            Open Http Error Message
+        </ui-button>
+    </div>
+    <div class="code" flex="80" flex-sm="80">
+                <pre><code>
+                    &lt;ui-button size="small"
+                    ng-click="openHttpError( 'This is content text' )"&gt;
+                    Open Http Error Message
+                    &lt;/ui-button&gt;
+                </code></pre>
+    </div>
+</div>
+<div layout="row" class="row-top">
+    <div class="item" flex="20" flex-sm="20">
+        In the controller
+    </div>
+    <div class="code" flex="80" flex-sm="80">
+                <pre><code>
+                    $scope.openHttpError = function ( text ) {
+                    var req = 'An error as occured, please contact your administrator';
+
+                    httpError.create({
+                    err : req,
+                    content : text,
+                    dismissOnTimeout : false,
+                    dismissButton : true
+                    });
+                    };
+                </code></pre>
+    </div>
+</div>
+
+
+<div layout="row"><a name="Services-httpError-Close"><h2 class="item-name">Open an http error with multiple errors.</h2></a></div>
+<div layout="row">
+    <div class="item" flex>
+        Just click the toast to close it.
+    </div>
+</div>
+<div layout="row" class="row-top">
+    <div class="item" flex="20" flex-sm="20">
+        <ui-button size="small" ng-click="openHttpErrorMultiple( )">Open multiple http errors</ui-button>
+    </div>
+    <div class="code" flex="80" flex-sm="80">
+                <pre><code>
+                    &lt;ui-button size="small" ng-click="openHttpErrorMultiple( 'This is content text' )"&gt;
+                    Open multiple http errors
+                    &lt;/ui-button&gt;
+                </code></pre>
+    </div>
+</div>
+<div layout="row" class="row-top">
+    <div class="item" flex="20" flex-sm="20">
+        In the controller
+    </div>
+    <div class="code" flex="80" flex-sm="80">
+                <pre><code>
+                    $scope.openHttpErrorMultiple = function( text ) {
+                    req = {config: {}, headers: {}, status: '500', statusText: 'Internal Server Error'};
+                    data = {
+                    "error": {
+                    "code": "501",
+                    "message": "Unsupported functionality",
+                    "target": "query",
+                    "details": [
+                    {
+                    "message" : "Norman magic not found 1"
+                    },
+                    {
+                    "message" : "Norman magic not found 2"
+                    },
+                    {
+                    "message" : "Norman magic not found 3"
+                    },
+                    {
+                    "message" : "Norman magic not found 4"
+                    }
+                    ]
+                    }
+                    req.data = data;
+                    httpError.create({
+                    err: req;
+                    content: text,
+                    dismissOnTimeout: false,
+                    dismissButton: true
+                    });
+                    };
+                </code></pre>
+    </div>
+</div>
+
+
+<div layout="row"><a name="Services-httpError-Timeout"><h2 class="item-name">Open an http error message, which will close itself after a timeout</h2></a></div>
+<div layout="row">
+    <div class="item" flex="20" flex-sm="20">
+        <ui-button size="medium"
+                   ng-click="openHttpErrorAutoClose( 'This is content text', 10000 )">
+            Open Http Error Message with auto close timeout
+        </ui-button>
+    </div>
+    <div class="code" flex="80" flex-sm="80">
+                <pre><code>
+                    &lt;ui-button size="small"
+                    ng-click="openHttpErrorAutoClose( 'This is content text', 10000 )"&gt;
+                    Open Http Error with auto close timeout
+                    &lt;/ui-button&gt;
+                </code></pre>
+    </div>
+</div>
+<div layout="row" class="row-top">
+    <div class="item" flex="20" flex-sm="20">
+        In the controller
+    </div>
+    <div class="code" flex="80" flex-sm="80">
+                <pre><code>
+                    $scope.openHttpErrorAutoClose = function(text, timeout ) {
+                    httpError.create({
+                    content: text,
+                    dismissOnTimeout: true,
+                    timeout: timeout,
+                    dismissButton: false
+                    });
+                    };
+                </code></pre>
+    </div>
+</div>
+
+
+<div layout="row"><a name="Services-httpError-Close"><h2 class="item-name">Close all Http Error Messages</h2></a></div>
+<div layout="row">
+    <div class="item" flex="20" flex-sm="20">
+        <ui-button size="small" ng-click="closeHttpErrors()">Close Http Error Messsages</ui-button>
+    </div>
+    <div class="code" flex="80" flex-sm="80">
+                <pre><code>
+                    &lt;ui-button size="small" ng-click="closeHttpErrors()"&gt;Close Http Error Messages&lt;/ui-button&gt;
+                </code></pre>
+    </div>
+</div>
+<div layout="row" class="row-top">
+    <div class="item" flex="20" flex-sm="20">
+        In the controller
+    </div>
+    <div class="code" flex="80" flex-sm="80">
+                <pre><code>
+                    $scope.closeHttpErrors = function() {
+                    httpError.dismiss();
+                    };
+                </code></pre>
+    </div>
+</div>
+
+<div layout="row"><a name="Directives-Tooltip-Top"><h2 class="item-name">Options</h2></a></div>
+<div layout="row" class="item">
+    <div class="item">
+        <div class="table-options">
+            <table class="table-options-values">
+                <thead>
+                <tr>
+                    <th style="width: 200px;">Property</th>
+                    <th style="width: 200px;">Type</th>
+                    <th style="width: 100px;">Default</th>
+                    <th>description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>title</td>
+                    <td>object</td>
+                    <td></td>
+                    <td>if the title is there it will be displayed, if not a default title is displayed instead.
+                        if a real HTTP error is passed, the title is useless, as the response status code and message are displayed.
+                    </td>
+                </tr>
+                <tr>
+                    <td>content</td>
+                    <td>object/string</td>
+                    <td></td>
+                    <td>
+                        if the content is a single string the message is displayed as a single line.
+                        if the content is an object then it's displayed as a ordered list.
+                        the object format should be as follow: <br>
+                                    <pre><code>
+                                        data = {
+                                        "error": {
+                                        "code": "501",
+                                        "message": "Unsupported functionality",
+                                        "target": "query",
+                                        "details": [
+                                        {
+                                        "message" : "Norman magic not found 1"
+                                        },
+                                        {
+                                        "message" : "Norman magic not found 2"
+                                        },
+                                        {
+                                        "message" : "Norman magic not found 3"
+                                        },
+                                        {
+                                        "message" : "Norman magic not found 4"
+                                        },
+                                        {
+                                        ...
+                                        }
+                                        ]
+                                        },
+                                        }
+                                    </code></pre>
+                        Content of the toast message as string (HTML is supported).
+                    </td>
+                </tr>
+                <tr>
+                    <td>dismissButton</td>
+                    <td>boolean</td>
+                    <td>true</td>
+                    <td>Display the close button.</td>
+                </tr>
+                <tr>
+                    <td>dismissOnTimeout</td>
+                    <td>boolean</td>
+                    <td>true</td>
+                    <td>Allows error messages to be removed automatically after a specified time.</td>
+                </tr>
+                <tr>
+                    <td>timeout</td>
+                    <td>number</td>
+                    <td>10000</td>
+                    <td>Wait time for removal of created error message</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</ui-content>
+</ui-content>

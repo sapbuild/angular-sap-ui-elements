@@ -1,0 +1,15 @@
+<div class="ui-toast ui-toast-{{hPos}} ui-toast-{{vPos}}" ng-show="uiMessages.length > 0">
+    <ul class="ui-toast-list">
+        <ui-toast-message ng-repeat="uiMessage in uiMessages" ui-message="uiMessage">
+            <span ng-if="!uiMessage.isObject" ng-bind-html="uiMessage.content"></span>
+            <div ng-if="uiMessage.isObject">
+                <span ng-bind-html="uiMessage.title"></span>
+                <div class="ui-toast-content-list">
+                    <ul class="ui-toast-content-list-entries">
+                        <li class="ui-toast-content-list-entry" ng-repeat="msg in uiMessage.content" ng-bind-html="msg.message"></li>
+                    </ul>
+                </div>
+            </div>
+        </ui-toast-message>
+    </ul>
+</div>

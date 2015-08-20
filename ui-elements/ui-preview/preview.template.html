@@ -1,0 +1,25 @@
+<div class="ui-preview" ng-class="{open: isOpen}" class="animated fadeIn" layout="row" layout-align="start start" layout-fill>
+    <div layout="column" layout-grow class="left-side">
+        <div layout="row" layout-align="center center" layout-grow class="img-container">
+            <ui-busy-indicator show-busy-indicator="showBusyIndicator" full-screen="isFullScreen"></ui-busy-indicator>
+            <ui-image-loader image-src="{{url}}" ng-if="isImage"></ui-image-loader>
+            <div class="text" ng-class="{hidden: isImage}">No viewer for that document</div>
+        </div>
+    </div>
+    <div layout="column" layout-grow layout-align="space-between center" class="right-side">
+        <ui-toolbar class="header" layout="column" layout-align="start start">
+            <div layout="row" layout-align="space-between start" class="actions">
+                <div class="docName">
+                    <h1>{{doc.name}}<small>{{doc.size | fileSize:2}}</small></h1>
+                </div>
+                <span class="close" ng-click="close();">&times;</span>
+            </div>
+        </ui-toolbar>
+        <div layout="column" layout-grow layout-stretch class="content">
+            <div class="docUser">
+                <div class="avatar"><ui-avatar avatar-name="{{user.name}}" avatar-image="{{user.avatar_url}}" avatar-state="active"></ui-avatar></div>
+                <h2><small>Uploaded by:</small>{{user.name}}<small>{{doc.created_at | date:'dd MMM yyyy hh:mm'}}</small></h2>
+            </div>
+        </div>
+    </div>
+</div>
