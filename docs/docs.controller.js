@@ -273,63 +273,63 @@ module.exports = function ($scope, uiError, httpError) {
     $scope.users = [{
         name: 'Bob Dylan',
         state: 'active',
-        email: 'test@sap.com'
+        email: 'test@example.com'
     }, {
         name: 'Jimi Hendrix',
         picture: 'url(../resources/angular-sap-ui-elements/assets/sample_user.png)',
-        email: 'test@sap.com'
+        email: 'test@example.com'
     }, {
         name: 'Freddie Mercury',
-        email: 'test@sap.com'
+        email: 'test@example.com'
     }, {
         name: 'David Bowie',
         state: 'active',
-        email: 'test@sap.com'
+        email: 'test@example.com'
     }, {
         name: 'John Lennon',
-        email: 'test@sap.com'
+        email: 'test@example.com'
     }, {
         name: 'Test User',
-        email: 'test@sap.com'
+        email: 'test@example.com'
     }, {
         name: 'Test User',
-        email: 'test@sap.com'
+        email: 'test@example.com'
     }, {
         name: 'Test User',
-        email: 'test@sap.com'
+        email: 'test@example.com'
     }, {
         name: 'Test User',
-        email: 'test@sap.com'
+        email: 'test@example.com'
     }, {
         name: 'Test User',
-        email: 'test@sap.com'
+        email: 'test@example.com'
     }, {
         name: 'Test User',
-        email: 'test@sap.com'
+        email: 'test@example.com'
     }, {
         name: 'Test User',
-        email: 'test@sap.com'
+        email: 'test@example.com'
     }, {
         name: 'Test User',
-        email: 'test@sap.com'
+        email: 'test@example.com'
     }, {
         name: 'Test User',
-        email: 'test@sap.com'
+        email: 'test@example.com'
     }, {
         name: 'Test User',
-        email: 'test@sap.com'
+        email: 'test@example.com'
     }, {
         name: 'Test User',
-        email: 'test@sap.com'
+        email: 'test@example.com'
     }, {
         name: 'Test User',
-        email: 'test@sap.com'
+        email: 'test@example.com'
     }, {
         name: 'Test User',
-        email: 'test@sap.com'
+        email: 'test@example.com'
     }, {
         name: 'Test User',
-        email: 'test@sap.com'
+        email: 'test@example.com'
     }];
 
     $scope.popLegend = [
