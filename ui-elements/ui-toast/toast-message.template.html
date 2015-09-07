@@ -1,0 +1,6 @@
+<li class="ui-toast-message animated fadeInDown {{uiMessage.className}}">
+    <div class="alert alert-{{uiMessage.className}}" ng-class="{'alert-dismissable': uiMessage.dismissButton}">
+        <span class="ui-toast-delete ui-toast-close" ng-if="uiMessage.dismissButton" ng-bind-html="uiMessage.dismissButtonHtml" ng-click="!uiMessage.dismissOnClick && dismiss()"></span>
+        <span ng-if="!uiMessage.compileContent" ng-transclude></span>
+    </div>
+</li>
