@@ -1,7 +1,7 @@
 {
   "name": "angular-sap-ui-elements",
   "description": "SAP Common client UI elements",
-  "version": "0.1.0",
+  "version": "0.1.9",
   "repository": {
     "type": "git",
     "url": "https://github.com/sapbuild/angular-sap-ui-elements.git"
@@ -9,7 +9,7 @@
   "licenses": [
     {
       "type": "Apache License, Version 2.0",
-      "url": "https://github.com/sapbuild/angular-sap-ui-elements/blob/master/LICENSE.md"
+      "url": "https://github.com/SAP/Build/blob/master/LICENSE.md"
     }
   ],
   "dependencies": {
