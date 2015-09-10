@@ -36,7 +36,7 @@
  * 
  */
 var d3 = require('d3-browserify');
-var sankey = require('norman-d3-plugins/sankey/sankey');
+var sankey = require('angular-sap-d3-plugins/sankey/sankey');
 // @ngInject
 module.exports = function() {
 	return {
