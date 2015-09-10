@@ -8,7 +8,7 @@
  * Factory helper methods for generating thumbnails.
  *
  */
-var libHtml2canvas = require('norman-html2canvas');
+var libHtml2canvas = require('angular-sap-html2canvas');
 var pica = require('pica');
 
 // @ngInject
