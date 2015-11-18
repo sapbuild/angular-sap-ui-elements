@@ -9,4 +9,7 @@ node_js:
 script:
   - gulp dist 
   
+notifications:
+  slack: sapuxddub:80SUMiwMrkrzS9vFX1l4kZGw
+  
 after_script: "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
